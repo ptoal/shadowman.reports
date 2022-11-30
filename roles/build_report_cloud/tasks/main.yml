@@ -10,7 +10,7 @@
 
 - name: Firewall port open
   ansible.posix.firewalld:
-    permanent: yes
+    permanent: true
     state: enabled
     service: http
 
