@@ -8,6 +8,12 @@
     name: httpd
     state: started
 
+- name: Firewall port open
+  ansible.posix.firewalld:
+    permanent: yes
+    state: enabled
+    service: http
+
 - name: Create HTML report if jinja include works
   ansible.builtin.template:
     src: report.j2
